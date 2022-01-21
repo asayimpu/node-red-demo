@@ -1,1 +1,76 @@
-[]
+[
+    {
+        "id": "1b1008dd0e440fd5",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "0431b23aaba23e27",
+        "type": "http in",
+        "z": "1b1008dd0e440fd5",
+        "name": "Home Page",
+        "url": "/home",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 200,
+        "y": 140,
+        "wires": [
+            [
+                "eb049e1b8969f5c3"
+            ]
+        ]
+    },
+    {
+        "id": "eb049e1b8969f5c3",
+        "type": "template",
+        "z": "1b1008dd0e440fd5",
+        "name": "html",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "<!DOCTYPE html>\n<html>\n<title>Node-RED webpage</title>\n<style>{{{payload.style}}}</style>\n\n<body>\n\n<h1>Task List</h1>\n    <p>Current tasks for skaffold:</p>\n    <ul>\n      <li>Build Docker image</li>\n      <li>Create Kuberenetes Deployment files</li>\n      <li>Create Skaffold Cofnig File</li>\n    </ul>\n\n</body>\n</html>",
+        "output": "str",
+        "x": 340,
+        "y": 220,
+        "wires": [
+            [
+                "27fdc0ae7bd052bc"
+            ]
+        ]
+    },
+    {
+        "id": "27fdc0ae7bd052bc",
+        "type": "template",
+        "z": "1b1008dd0e440fd5",
+        "name": "CSS",
+        "field": "payload.style",
+        "fieldType": "msg",
+        "format": "html",
+        "syntax": "mustache",
+        "template": "body{\n\tbackground-color:#000;\n}\n\nh1{\n\tcolor: white;\n\ttext-align: center;\n}\n\np{\n\tfont-family: verdana;\n\tfont-size: 20px;\n\tcolor: #666;\n}",
+        "output": "str",
+        "x": 480,
+        "y": 240,
+        "wires": [
+            [
+                "288d24b854e7ef72"
+            ]
+        ]
+    },
+    {
+        "id": "288d24b854e7ef72",
+        "type": "http response",
+        "z": "1b1008dd0e440fd5",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 660,
+        "y": 240,
+        "wires": []
+    }
+]
