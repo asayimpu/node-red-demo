@@ -1,12 +1,12 @@
 {
     "name": "node-red-demo",
     "description": "A Node-RED Project",
-    "version": "0.14.5",
+    "version": "0.0.1",
     "scripts": {
-        "start": "node-red"
+        "start": "node $NODE_OPTIONS node_modules/node-red/red.js $FLOWS"
     },
     "dependencies": {
-        "node-red": "0.14.5"
+        "node-red": "0.0.1"
     },
 
     "node-red": {
