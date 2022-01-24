@@ -33,7 +33,7 @@
         "fieldType": "msg",
         "format": "html",
         "syntax": "mustache",
-        "template": "<!DOCTYPE html>\n<html>\n<title>Node-RED webpage</title>\n<style>{{{payload.style}}}</style>\n\n<body>\n\n<h1>Task List</h1>\n    <p>Current tasks</p>\n    <ul>\n      <li>Build Docker image</li>\n      <li>Create Kuberenetes Deployment files</li>\n      <li>Create Skaffold Cofnig File</li>\n    </ul>\n\n</body>\n</html>",
+        "template": "<!DOCTYPE html>\n<html>\n<title>Node-RED webpage</title>\n<style>{{{payload.style}}}</style>\n\n<body style=\"background-color:powderblue;\">\n\n<h1>Task List</h1>\n    <p>Current tasks</p>\n    <ul>\n      <li>Build Docker image</li>\n      <li>Create Kuberenetes Deployment files</li>\n      <li>Create Skaffold Cofnig File</li>\n    </ul>\n\n</body>\n</html>",
         "output": "str",
         "x": 340,
         "y": 220,
